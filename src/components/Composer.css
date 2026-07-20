@@ -1,0 +1,142 @@
+.composer {
+  border-top: 1px solid var(--border);
+  background: var(--bg-secondary);
+  flex-shrink: 0;
+}
+
+.composer-reply-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.composer-reply-label {
+  font-weight: 600;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.composer-reply-text {
+  flex: 1;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.composer-reply-cancel {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.composer-reply-cancel:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.composer-reply-cancel:focus-visible {
+  outline: 2px solid var(--accent);
+}
+
+.composer-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 12px 16px;
+}
+
+.composer-row--offline {
+  opacity: 0.7;
+}
+
+.composer-offline-badge {
+  font-size: 12px;
+  color: var(--warning);
+  white-space: nowrap;
+}
+
+.composer-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 15px;
+  resize: none;
+  outline: none;
+  max-height: 120px;
+  overflow-y: auto;
+  line-height: 1.4;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+}
+
+.composer-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.composer-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.send-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  font-size: 18px;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, transform 0.1s, color 0.15s;
+  flex-shrink: 0;
+}
+
+.send-btn--active {
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.send-btn--active:hover {
+  background: var(--accent-hover);
+  transform: scale(1.05);
+}
+
+.send-btn--active:active {
+  transform: scale(0.95);
+}
+
+.send-btn--sending {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.send-btn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.composer-disabled-note {
+  margin: 0;
+  padding: 6px 16px 12px;
+  font-size: 13px;
+  color: var(--danger);
+  text-align: center;
+}

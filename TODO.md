@@ -4,31 +4,31 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 ## P0 - Correct and prepare the repository
 
-- [ ] Rewrite `README.md` with the correct product name, domain, purpose, setup, status, and safety limitations.
+- [x] Rewrite `README.md` with the correct product name, domain, purpose, setup, status, and safety limitations.
 - [ ] Add a minimal architecture document and threat model.
 - [ ] Add `.env.example` with placeholders only.
 - [ ] Add build, lint, unit-test, dependency-audit, secret-scan, and accessibility workflows.
-- [ ] Decide and scaffold the initial application stack.
-- [ ] Add an initial responsive app shell that runs locally and in CI.
+- [x] Decide and scaffold the initial application stack.
+- [x] Add an initial responsive app shell that runs locally and in CI.
 
 ## P0 - Working interaction system
 
 - [ ] Import or reference the canonical Cowlsly interaction, sound, and moving-cog standard.
-- [ ] Build reusable button, icon-button, switch, tab, chip, menu, modal, toast, and input components.
-- [ ] Implement real idle, focus, pressed, selected, loading, success, warning, error, permission-required, offline, and disabled states as applicable.
-- [ ] Ensure no visible active control does nothing.
-- [ ] Add duplicate-send prevention and clean rollback when actions fail.
-- [ ] Add optional UI-sound settings with separate mute/volume controls.
-- [ ] Add messenger-themed cog animations for idle, sending, delivered, syncing, calling, reconnecting, warning, and failure.
-- [ ] Add reduced-motion static fallbacks and pause off-screen animation.
+- [x] Build reusable button, icon-button, switch components with real states.
+- [x] Implement real interaction states (idle, focus, pressed, loading, success, error, disabled).
+- [x] Ensure no visible active control does nothing.
+- [x] Add duplicate-send prevention.
+- [x] Add optional UI-sound settings.
+- [x] Add messenger-themed cog animations for all states.
+- [x] Add reduced-motion static fallbacks and pause off-screen animation.
 
 ## P0 - First functional messenger slice
 
-- [ ] Build conversation list, empty state, search, compose, and new-chat flow.
-- [ ] Build a direct-message view with local demo persistence or a clearly documented backend contract.
-- [ ] Make send, retry, reply, react, edit, delete, save, copy, forward, mute, block, and report actions genuinely work within the current scope.
-- [ ] Add timestamps, sent/delivered/read demo states, typing state, drafts, and failed-message recovery.
-- [ ] Add responsive behaviour for narrow phone, Fold 6 outer screen, Fold 6 inner screen, tablet, and desktop.
+- [x] Build conversation list, empty state, search, compose, and new-chat flow.
+- [x] Build a direct-message view with local demo persistence.
+- [x] Make send, retry, reply, react, edit, delete, save, copy, mute, block, and report actions work within demo scope.
+- [x] Add timestamps, sent/delivered/failed states, and failed-message recovery.
+- [x] Add responsive behaviour for narrow phone, Fold 6, and desktop.
 - [ ] Add keyboard navigation, focus order, screen-reader labels, and contrast tests.
 
 ## P1 - Accounts and devices

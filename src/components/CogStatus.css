@@ -1,0 +1,150 @@
+.cog-status {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+}
+
+.cog-svg {
+  display: block;
+}
+
+.cog-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: inherit;
+  text-align: center;
+}
+
+@keyframes cog-spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cog-spin-medium {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cog-spin-fast {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cog-spin-jitter {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(8deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  60% {
+    transform: rotate(6deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes cog-spin-ccw-slow {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes cog-spin-ccw-medium {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes cog-spin-ccw-fast {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes cog-spin-ccw-jitter {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  40% {
+    transform: rotate(4deg);
+  }
+  60% {
+    transform: rotate(-6deg);
+  }
+  80% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.cog-cw--idle {
+  animation: cog-spin-slow 6s linear infinite;
+}
+
+.cog-cw--sending {
+  animation: cog-spin-medium 2s linear infinite;
+}
+
+.cog-cw--delivered {
+  animation: cog-spin-fast 0.5s linear 2;
+}
+
+.cog-cw--syncing {
+  animation: cog-spin-medium 1.5s linear infinite;
+}
+
+.cog-cw--warning {
+  animation: cog-spin-jitter 1s ease-in-out infinite;
+}
+
+.cog-cw--failure {
+  animation: none;
+}
+
+.cog-ccw--idle {
+  animation: cog-spin-ccw-slow 4s linear infinite;
+}
+
+.cog-ccw--sending {
+  animation: cog-spin-ccw-medium 1.33s linear infinite;
+}
+
+.cog-ccw--delivered {
+  animation: cog-spin-ccw-fast 0.33s linear 2;
+}
+
+.cog-ccw--syncing {
+  animation: cog-spin-ccw-medium 1s linear infinite;
+}
+
+.cog-ccw--warning {
+  animation: cog-spin-ccw-jitter 1s ease-in-out infinite;
+}
+
+.cog-ccw--failure {
+  animation: none;
+}
+
+.cog-paused {
+  animation-play-state: paused !important;
+  animation: none !important;
+}
