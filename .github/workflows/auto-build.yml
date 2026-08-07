@@ -2,9 +2,12 @@ name: Validate Cowlsly Chat
 
 on:
   push:
-    branches: [root]
+    branches:
+      - root
+      - agent/consolidated-testable-chat-2026-08-07
   pull_request:
     branches: [root]
+    types: [opened, synchronize, reopened, ready_for_review]
   workflow_dispatch:
 
 permissions:
