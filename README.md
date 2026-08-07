@@ -1,25 +1,34 @@
-# console-chat.app-cowlsly.cc
+# Cowlsly Chat
 
 [![Automatic Build](https://github.com/Cowlsly/chat_app_cowlsly_cc/actions/workflows/auto-build.yml/badge.svg?branch=root)](https://github.com/Cowlsly/chat_app_cowlsly_cc/actions/workflows/auto-build.yml)
 
-This is the base website for the cowly.com chat platform, hosted on Cowlsly.CC.
+Frontend-only controlled-testing build for the Cowlsly private-chat experience at `cowlsly.cc`.
 
 ## Current status
 
-This repository is currently a **planning and documentation placeholder**, not a buildable chat application.
+This branch contains a buildable Vite interface for navigation, responsive-layout and local message-flow testing. Demo conversations are stored in browser `localStorage` and are not shared between users or devices.
 
-At the moment, the repository does **not** contain the application source, package manifest, backend service, or deployment assets required for a real website build.
+It is **not** a production private-messaging service. It does not yet provide authentication, a shared database, server APIs, WebSocket delivery, account recovery, moderation, file storage, push notifications or end-to-end encryption.
 
-## Build status
+## Local development
 
-Every commit pushed to the `root` branch automatically runs the repository build workflow. Open the badge above or the Actions tab to see the latest progress and any failing step.
+```bash
+npm install
+npm test
+npm run build
+npm run dev
+```
 
-The current workflow is expected to pass by confirming repository checkout and placeholder status until real app source files are added.
+Node 22 or later is required.
 
-## What must exist before this becomes a real website app
+## Safety boundaries
 
-- a frontend app manifest such as `package.json`
-- actual application source files
-- a production build script
-- tests and lint checks
-- deployment configuration for the intended hosting target
+- Do not enter real private information into the demo.
+- Do not claim end-to-end encryption.
+- Do not store access tokens in `localStorage`.
+- Blocking, reporting, moderation and server-side authorisation are launch requirements, not optional enhancements.
+- Production secrets belong in a secret manager, never Git.
+
+## Deployment
+
+The production Vite base is `/`, suitable for the `cowlsly.cc` custom-domain root. `public/staticwebapp.config.json` supplies SPA fallback and baseline security headers for Azure Static Web Apps. DNS, TLS, direct-navigation, refresh behaviour and the final hosting environment still require manual verification before release.
