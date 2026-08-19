@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "canonical_repository": "Cowlsly/ui_assets_and_data_files",
+  "canonical_branch": "root",
+  "canonical_commit": "40fbc7d7edc57ff3c988e0130f63dbdcfb055173",
+  "consumer": "Cowlsly/chat_app_cowlsly_cc",
+  "groups": [
+    {
+      "name": "branding",
+      "required": true,
+      "purpose": "Cowlsly Chat product identity and shared navigation"
+    },
+    {
+      "name": "cogs",
+      "required": true,
+      "purpose": "messenger state and machine-frame interaction visuals"
+    },
+    {
+      "name": "icons",
+      "required": true,
+      "purpose": "shared accessible action iconography"
+    },
+    {
+      "name": "top_bar_profile_card",
+      "required": true,
+      "purpose": "shared Cowlsly identity surface with privacy-aware field visibility"
+    },
+    {
+      "name": "ui_transitions/cowlsly_vault_transition",
+      "required": true,
+      "purpose": "approved screen/profile transitions with reduced-motion fallback"
+    },
+    {
+      "name": "ui_audio",
+      "required": false,
+      "purpose": "optional interaction feedback with mute and volume controls"
+    }
+  ],
+  "generated_copies": [],
+  "notes": "Exact canonical file paths and checksums are added before generated binaries are consumed by production code. No shared master is edited in this repository."
+}
