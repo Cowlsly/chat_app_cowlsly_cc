@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#07111f" />
+  <meta name="description" content="Cowlsly Chat — a responsive messenger experience for Cowlsly.cc." />
+  <title>Cowlsly Chat</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#conversation">Skip to conversation</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Conversations">
+      <header class="brand-row">
+        <div class="brand-mark" aria-hidden="true">⚙️</div>
+        <div><strong>Cowlsly Chat</strong><small>Messenger preview</small></div>
+        <button class="icon-btn" id="new-chat" type="button" aria-label="New chat">＋</button>
+      </header>
+      <label class="search-wrap">
+        <span class="sr-only">Search conversations</span>
+        <input id="search" type="search" placeholder="Search chats…" autocomplete="off" />
+      </label>
+      <nav id="conversation-list" class="conversation-list" aria-label="Conversation list"></nav>
+      <footer class="sidebar-foot">
+        <button id="sound-toggle" class="pill-btn" type="button" aria-pressed="false">🔈 Sounds</button>
+        <button id="motion-toggle" class="pill-btn" type="button" aria-pressed="false">⚙ Motion</button>
+      </footer>
+    </aside>
+
+    <main class="conversation" id="conversation">
+      <header class="conversation-head">
+        <button class="icon-btn mobile-only" id="back" type="button" aria-label="Back to conversations">←</button>
+        <div class="avatar" id="active-avatar" aria-hidden="true">M</div>
+        <div class="conversation-title"><strong id="active-name">Marla</strong><small id="active-status">Online · AI contact</small></div>
+        <div class="head-actions">
+          <button class="icon-btn" id="search-messages" type="button" aria-label="Search messages">⌕</button>
+          <button class="icon-btn" id="chat-menu" type="button" aria-label="Conversation menu" aria-expanded="false">⋮</button>
+        </div>
+      </header>
+
+      <section id="message-search-bar" class="message-search-bar" hidden>
+        <input id="message-search-input" type="search" placeholder="Search this conversation…" />
+        <button class="pill-btn" id="close-message-search" type="button">Close</button>
+      </section>
+
+      <section id="messages" class="messages" aria-live="polite" aria-label="Messages"></section>
+
+      <section id="reply-banner" class="reply-banner" hidden>
+        <div><small>Replying to</small><strong id="reply-text"></strong></div>
+        <button class="icon-btn" id="cancel-reply" type="button" aria-label="Cancel reply">×</button>
+      </section>
+
+      <form id="composer" class="composer">
+        <button class="icon-btn" type="button" id="attach" aria-label="Attach file">＋</button>
+        <label class="composer-input"><span class="sr-only">Message</span><textarea id="message-input" rows="1" maxlength="4000" placeholder="Message…"></textarea></label>
+        <button class="send-btn" type="submit" id="send">Send</button>
+      </form>
+    </main>
+  </div>
+
+  <dialog id="new-chat-dialog">
+    <form method="dialog" class="dialog-card" id="new-chat-form">
+      <h2>New chat</h2>
+      <label>Name<input id="new-chat-name" required maxlength="60" placeholder="Name" /></label>
+      <label>Type<select id="new-chat-type"><option value="person">Person</option><option value="ai">AI contact</option></select></label>
+      <div class="dialog-actions"><button value="cancel" class="pill-btn">Cancel</button><button value="default" id="create-chat" class="send-btn">Create</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="action-dialog"><div class="dialog-card" id="action-dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
