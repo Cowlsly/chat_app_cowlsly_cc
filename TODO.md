@@ -4,16 +4,16 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 ## P0 - Correct and prepare the repository
 
-- [ ] Rewrite `README.md` with the correct product name, domain, purpose, setup, status, and safety limitations.
-- [ ] Add a minimal architecture document and threat model.
-- [ ] Add `.env.example` with placeholders only.
+- [x] Rewrite `README.md` with the correct product name, domain, purpose, setup, status, and safety limitations.
+- [x] Add a minimal architecture document and threat model.
+- [x] Add `.env.example` with placeholders only.
 - [ ] Add build, lint, unit-test, dependency-audit, secret-scan, and accessibility workflows.
-- [ ] Decide and scaffold the initial application stack.
-- [ ] Add an initial responsive app shell that runs locally and in CI.
+- [x] Decide and scaffold the initial application stack.
+- [x] Add an initial responsive app shell that runs locally and in CI.
 
 ## P0 - Working interaction system
 
-- [ ] Import or reference the canonical Cowlsly interaction, sound, and moving-cog standard.
+- [x] Import or reference the canonical Cowlsly interaction, sound, and moving-cog standard.
 - [ ] Build reusable button, icon-button, switch, tab, chip, menu, modal, toast, and input components.
 - [ ] Implement real idle, focus, pressed, selected, loading, success, warning, error, permission-required, offline, and disabled states as applicable.
 - [ ] Ensure no visible active control does nothing.
@@ -24,16 +24,16 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 ## P0 - First functional messenger slice
 
-- [ ] Build conversation list, empty state, search, compose, and new-chat flow.
-- [ ] Build a direct-message view with local demo persistence or a clearly documented backend contract.
+- [x] Build conversation list, empty state, search, compose, and new-chat flow.
+- [x] Build a direct-message view with local demo persistence or a clearly documented backend contract.
 - [ ] Make send, retry, reply, react, edit, delete, save, copy, forward, mute, block, and report actions genuinely work within the current scope.
 - [ ] Add timestamps, sent/delivered/read demo states, typing state, drafts, and failed-message recovery.
-- [ ] Add responsive behaviour for narrow phone, Fold 6 outer screen, Fold 6 inner screen, tablet, and desktop.
+- [x] Add responsive behaviour for narrow phone, Fold 6 outer screen, Fold 6 inner screen, tablet, and desktop.
 - [ ] Add keyboard navigation, focus order, screen-reader labels, and contrast tests.
 
 ## P1 - Accounts and devices
 
-- [ ] Define shared-identity API contracts.
+- [x] Define shared-identity API contracts.
 - [ ] Add session and linked-device data models.
 - [ ] Add device list, last activity, login alerts, revoke controls, and sensitive-action re-authentication.
 - [ ] Add privacy controls for last seen, online status, read receipts, typing indicators, contact discovery, and message requests.
