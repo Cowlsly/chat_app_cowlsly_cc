@@ -37,11 +37,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-          cache-dependency-path: |
-            package-lock.json
-            yarn.lock
-            pnpm-lock.yaml
 
       - name: Build Node.js project
         if: steps.detect.outputs.node == 'true'
@@ -118,7 +113,11 @@ jobs:
 
       - name: Confirm repository is buildable
         shell: bash
+        env:
+          DETECTED: ${{ steps.detect.outputs.node }}${{ steps.detect.outputs.python }}${{ steps.detect.outputs.go }}${{ steps.detect.outputs.maven }}${{ steps.detect.outputs.gradle }}${{ steps.detect.outputs.dotnet }}${{ steps.detect.outputs.docker }}
         run: |
-          if [ "${{ steps.detect.outputs.node }}${{ steps.detect.outputs.python }}${{ steps.detect.outputs.go }}${{ steps.detect.outputs.maven }}${{ steps.detect.outputs.gradle }}${{ steps.detect[...]
+          if [ -z "$DETECTED" ]; then
             echo "No supported build manifest detected; repository checkout succeeded."
+          else
+            echo "Build steps ran for the detected project type(s)."
           fi
