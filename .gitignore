@@ -1,0 +1,19 @@
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.idea/
+.vscode/
+
+# Local secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Node / build output
+node_modules/
+dist/
+coverage/
+*.log
