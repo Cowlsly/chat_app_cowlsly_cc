@@ -1,0 +1,40 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
+  "name": "Cowlsly Labs • chat_app_cowlsly_cc • Mobile v2",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.fontSize": 20,
+        "terminal.integrated.fontSize": 20,
+        "terminal.integrated.lineHeight": 1.2,
+        "window.zoomLevel": 0.5,
+        "editor.wordWrap": "on",
+        "editor.minimap.enabled": false,
+        "editor.stickyScroll.enabled": false,
+        "editor.scrollBeyondLastLine": false,
+        "breadcrumbs.enabled": false,
+        "workbench.startupEditor": "none",
+        "workbench.editor.enablePreview": false,
+        "workbench.editor.showTabs": "single",
+        "workbench.panel.defaultLocation": "bottom",
+        "diffEditor.renderSideBySide": false,
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1800,
+        "terminal.integrated.tabs.enabled": false,
+        "terminal.integrated.scrollback": 8000,
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.copyOnSelection": false,
+        "git.autofetch": false,
+        "telemetry.telemetryLevel": "off"
+      },
+      "extensions": [
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "postCreateCommand": "git --version && node --version && gh --version"
+}
