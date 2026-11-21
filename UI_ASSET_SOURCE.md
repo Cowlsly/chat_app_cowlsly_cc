@@ -1,6 +1,6 @@
 # Cowlsly Chat UI Asset Source
 
-Canonical shared UI repository: `Cowlsly/ui_assets_and_data_files`
+Canonical shared UI repository: `Cowlsly/.-.07_Cowlsly-s_Asset_Studio`
 
 Canonical branch: `root`
 

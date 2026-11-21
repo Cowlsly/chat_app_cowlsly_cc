@@ -24,7 +24,7 @@ Default branch: `main`.
 - [ ] Choose and document the initial stack without pretending unimplemented infrastructure exists.
 - [ ] Add build, lint, unit-test, dependency-audit, secret-scan, and accessibility checks.
 - [ ] Define versioned contracts for shared identity, contacts, notifications, media, moderation, `.com` social sharing, `.net` payments, and `.org` staff support.
-- [ ] Consume the canonical interaction, sound, and moving-cog standards from `Cowlsly/ui_assets_and_data_files`.
+- [ ] Consume the canonical interaction, sound, and moving-cog standards from `Cowlsly/.-.07_Cowlsly-s_Asset_Studio`.
 
 ## Phase 1 - Working Cowlsly messenger shell
 
