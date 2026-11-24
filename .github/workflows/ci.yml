@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: [root]
+  pull_request:
+    branches: [root]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint-test-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+  dependency-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install
+        run: npm install
+
+      - name: Audit
+        run: npm audit --audit-level=moderate || true
+
+  secret-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Scan for common secrets
+        run: |
+          if grep -rE '(api[_-]?key|secret|password|token|private[_-]?key)\s*[:=]\s*["\'][a-zA-Z0-9+/=]{20,}' --exclude-dir=.git --exclude-dir=node_modules . ; then
+            echo "Potential secrets found"
+            exit 1
+          else
+            echo "No obvious secrets detected"
+          fi
