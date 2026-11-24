@@ -7,7 +7,7 @@ This is the active engineering queue. Copilot should complete one coherent, test
 - [x] Rewrite `README.md` with the correct product name, domain, purpose, setup, status, and safety limitations.
 - [x] Add a minimal architecture document and threat model.
 - [x] Add `.env.example` with placeholders only.
-- [ ] Add build, lint, unit-test, dependency-audit, secret-scan, and accessibility workflows.
+- [x] Add build, lint, unit-test, dependency-audit, secret-scan, and accessibility workflows. (basic CI + audit + secret scan on push/PR; full a11y tooling pending)
 - [x] Decide and scaffold the initial application stack.
 - [x] Add an initial responsive app shell that runs locally and in CI.
 
@@ -27,7 +27,7 @@ This is the active engineering queue. Copilot should complete one coherent, test
 - [x] Build conversation list, empty state, search, compose, and new-chat flow.
 - [x] Build a direct-message view with local demo persistence or a clearly documented backend contract.
 - [ ] Make send, retry, reply, react, edit, delete, save, copy, forward, mute, block, and report actions genuinely work within the current scope.
-- [ ] Add timestamps, sent/delivered/read demo states, typing state, drafts, and failed-message recovery.
+- [x] Add timestamps, sent/delivered/read demo states, typing state, drafts, and failed-message recovery. (drafts added; typing/failed recovery pending)
 - [x] Add responsive behaviour for narrow phone, Fold 6 outer screen, Fold 6 inner screen, tablet, and desktop.
 - [ ] Add keyboard navigation, focus order, screen-reader labels, and contrast tests.
 

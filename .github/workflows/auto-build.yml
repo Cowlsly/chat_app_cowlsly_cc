@@ -1,6 +1,10 @@
 name: Automatic Build
 
 on:
+  push:
+    branches: [root]
+  pull_request:
+    branches: [root]
   workflow_dispatch:
 
 permissions:
@@ -39,9 +43,20 @@ jobs:
         shell: bash
         run: |
           if [ -f package-lock.json ]; then npm ci; else npm install; fi
+          npm audit --audit-level=high || echo "Audit findings reported (non-blocking for demo)"
           npm test --if-present
           npm run lint --if-present
           npm run build --if-present
+
+      - name: Basic secret pattern scan
+        shell: bash
+        run: |
+          if grep -rE '(api[_-]?key|secret|password|token|private[_-]?key)\s*[:=]\s*["\'][^"\']{8,}' --include='*.js' --include='*.html' --include='*.md' --include='*.json' . 2>/dev/null; then
+            echo "Potential secret pattern found"
+            exit 1
+          else
+            echo "No obvious secret patterns detected"
+          fi
 
       - name: Set up Python
         if: steps.detect.outputs.python == 'true'
