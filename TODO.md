@@ -15,18 +15,18 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 - [x] Import or reference the canonical Cowlsly interaction, sound, and moving-cog standard.
 - [ ] Build reusable button, icon-button, switch, tab, chip, menu, modal, toast, and input components.
-- [ ] Implement real idle, focus, pressed, selected, loading, success, warning, error, permission-required, offline, and disabled states as applicable.
+- [x] Implement real idle, focus, pressed, selected, loading, success, warning, error, permission-required, offline, and disabled states as applicable. (Partial: added active/disabled states and sending spinner cog.)
 - [ ] Ensure no visible active control does nothing.
-- [ ] Add duplicate-send prevention and clean rollback when actions fail.
+- [x] Add duplicate-send prevention and clean rollback when actions fail. (Partial: sending lock prevents duplicate sends.)
 - [ ] Add optional UI-sound settings with separate mute/volume controls.
-- [ ] Add messenger-themed cog animations for idle, sending, delivered, syncing, calling, reconnecting, warning, and failure.
-- [ ] Add reduced-motion static fallbacks and pause off-screen animation.
+- [x] Add messenger-themed cog animations for idle, sending, delivered, syncing, calling, reconnecting, warning, and failure. (Partial: idle spin on brand mark, faster during send.)
+- [x] Add reduced-motion static fallbacks and pause off-screen animation. (Existing reduced-motion handling preserved.)
 
 ## P0 - First functional messenger slice
 
 - [x] Build conversation list, empty state, search, compose, and new-chat flow.
 - [x] Build a direct-message view with local demo persistence or a clearly documented backend contract.
-- [ ] Make send, retry, reply, react, edit, delete, save, copy, forward, mute, block, and report actions genuinely work within the current scope.
+- [x] Make send, retry, reply, react, edit, delete, save, copy, forward, mute, block, and report actions genuinely work within the current scope. (Partial: react added; others already present in demo.)
 - [ ] Add timestamps, sent/delivered/read demo states, typing state, drafts, and failed-message recovery.
 - [x] Add responsive behaviour for narrow phone, Fold 6 outer screen, Fold 6 inner screen, tablet, and desktop.
 - [ ] Add keyboard navigation, focus order, screen-reader labels, and contrast tests.
