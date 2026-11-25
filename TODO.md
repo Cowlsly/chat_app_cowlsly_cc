@@ -14,10 +14,10 @@ This is the active engineering queue. Copilot should complete one coherent, test
 ## P0 - Working interaction system
 
 - [x] Import or reference the canonical Cowlsly interaction, sound, and moving-cog standard.
-- [ ] Build reusable button, icon-button, switch, tab, chip, menu, modal, toast, and input components.
+- [ ] Build reusable button, icon-button, switch, tab, chip, menu, modal, toast, and input components. (Partial: `feat/reusable-ui-components` has ui.js helpers for toast/loading/preventDuplicate + expanded CSS states; integrate next.)
 - [ ] Implement real idle, focus, pressed, selected, loading, success, warning, error, permission-required, offline, and disabled states as applicable.
 - [ ] Ensure no visible active control does nothing.
-- [ ] Add duplicate-send prevention and clean rollback when actions fail.
+- [ ] Add duplicate-send prevention and clean rollback when actions fail. (Partial helpers exist on branch.)
 - [ ] Add optional UI-sound settings with separate mute/volume controls.
 - [ ] Add messenger-themed cog animations for idle, sending, delivered, syncing, calling, reconnecting, warning, and failure.
 - [ ] Add reduced-motion static fallbacks and pause off-screen animation.
@@ -85,4 +85,4 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 ## Current execution handoff (2026-11-25)
 
-Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered, evidence-gated execution queue, recent open PR references and acceptance tests. GitHub default branch is root, not main. The reported component branch is unverified until inspected. Existing milestones and historical completion evidence above are retained; reconcile them with current code and CI before claiming completion. Update the TODO and NEXTSTEPS together after each work shift.
+Inspected `feat/reusable-ui-components@d4cf8254f8bf4ff4702e5eb4b9cb4b30056b8751`: contains reusable `ui.js` helpers and expanded interaction CSS. Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered, evidence-gated execution queue. GitHub default branch is root, not main. Next: integrate the helpers into root without duplicating existing work. Existing milestones and historical completion evidence above are retained; reconcile them with current code and CI before claiming completion. Update the TODO and NEXTSTEPS together after each work shift.
