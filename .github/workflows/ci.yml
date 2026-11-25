@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install (if needed)
         run: |
@@ -39,8 +39,8 @@ jobs:
 
       - name: Secret scan (basic)
         run: |
-          # Lightweight check for common secret patterns
-          if grep -rE '(api[_-]?key|secret|password|token)\s*[:=]\s*["\'][a-zA-Z0-9]{20,}' --exclude-dir=node_modules --exclude-dir=.git .; then
+          # Lightweight check for common secret patterns. Exclude markdown and examples to reduce false positives.
+          if grep -rE '(api[_-]?key|secret|password|token)\s*[:=]\s*["'"'"'][a-zA-Z0-9]{20,}' --exclude-dir=node_modules --exclude-dir=.git --exclude='*.md' --exclude='.env.example' .; then
             echo "Potential secrets detected"; exit 1;
           else
             echo "No obvious secrets found.";
