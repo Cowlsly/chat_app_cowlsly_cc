@@ -107,3 +107,7 @@ Default branch: `main`.
 ## Completion rule
 
 The messenger is not production-ready until the working-control standard, privacy defaults, device/session controls, moderation, secure storage, honest encryption status, backups, accessibility, and recovery paths are all verified.
+
+## Current execution handoff (2026-11-25)
+
+Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered, evidence-gated execution queue, recent open PR references and acceptance tests. GitHub default branch is root, not main. The reported component branch is unverified until inspected. Existing milestones and historical completion evidence above are retained; reconcile them with current code and CI before claiming completion. Update the TODO and NEXTSTEPS together after each work shift.
