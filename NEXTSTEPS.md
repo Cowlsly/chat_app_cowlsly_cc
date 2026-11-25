@@ -1,21 +1,20 @@
 # Cowlsly.cc Messenger: next steps
 
-Updated 2026-11-25 (AWST). Canonical default branch: `root`. This is the runnable queue, not a release certification.
+Updated 2026-11-26 (AWST). Canonical default branch: `root`. This is the runnable queue, not a release certification.
 
 ## Baseline and dependencies
 README describes functional local demo. Open PRs #4–#7 observed. Existing ROADMAP says main, but GitHub default is root; use root.
 
-## Inspection evidence (2026-11-25)
-- Branch `feat/reusable-ui-components` exists at SHA `d4cf8254f8bf4ff4702e5eb4b9cb4b30056b8751`.
-- Contains `ui.js` with reusable helpers: `showToast`, `setLoading`, `preventDuplicate`, `openDialog`, `closeDialog`.
-- `app.js` imports and uses them for send-guard and toasts; `styles.css` has expanded interaction states (loading, selected, switch, chip, focus-visible).
-- No open PR for this branch; related open PRs remain #4 (consolidated preview), #5 (docs audit), #6 (palette), #7 (naming).
-- Do not duplicate; resume from this branch work when integrating.
+## Inspection evidence (2026-11-26)
+- Integrated reusable UI helpers from `feat/reusable-ui-components` into branch `integrate/reusable-ui-helpers`.
+- Added `ui.js` with `showToast`, `setLoading`, `preventDuplicate`, `openDialog`, `closeDialog`.
+- `app.js` imports and wires `preventDuplicate` on send; `styles.css` expanded with loading, selected, disabled, switch, chip states.
+- Related open PRs remain #4 (consolidated preview), #5 (docs audit), #6 (palette), #7 (naming).
 
 ## Ordered execution queue
 | ID | Priority | Next action | Acceptance evidence |
 |---|---|---|---|
-| 01 | P0 | Integrate `ui.js` helpers and interaction-state CSS from `feat/reusable-ui-components` into root; wire preventDuplicate on send and other high-impact actions. | Diff review, npm test/lint/build pass, no regression in local demo persistence. |
+| 01 | P0 | Integrate `ui.js` helpers and interaction-state CSS from `feat/reusable-ui-components` into root; wire preventDuplicate on send and other high-impact actions. | Done on `integrate/reusable-ui-helpers`: files added, send guarded. Diff review + CI pass pending merge. |
 | 02 | P0 | Complete demo retry/react/forward and keyboard/focus/screen-reader paths; disable unsupported controls with clear labels. | Responsive browser checks and accessible labels; clear demo-only delivery. |
 | 03 | P1 | Connect pinned canonical cog/assets and sound preferences; add off-screen pause and reduced-motion fallbacks. | Mute/volume and motion tests, no forced audio. |
 | 04 | P1 | Design backend/session, contact privacy and encrypted-message threat model before real messaging. | Cross-user isolation and protocol review; no encryption claims until proven. |
@@ -30,4 +29,4 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 - Keep plans outside public deployment output. Check CI/deployment status separately; docs commits are not product release evidence.
 
 ## Sources
-Repository README, existing planning documents, open PR metadata, and branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25. No code tests or live infrastructure verification performed during this documentation pass.
+Repository README, existing planning documents, open PR metadata, and integration of reusable UI helpers performed 2026-11-26. No live infrastructure verification performed.
