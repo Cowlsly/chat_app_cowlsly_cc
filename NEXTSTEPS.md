@@ -3,12 +3,12 @@
 Updated 2026-11-25 (AWST). Canonical default branch: `root`. This is the runnable queue, not a release certification.
 
 ## Baseline and dependencies
-README describes functional local demo; screenshot reports branch work and an unsubmitted PR form, not merged evidence. Open PRs #4–#7 observed. Existing ROADMAP says main, but GitHub default is root; use root.
+README describes functional local demo. Open PRs #4–#7 observed (all draft or older). feat/reusable-ui-components branch exists (SHA 0df45253bfdcfe8c7ce0fb9e5f27fe8ceb362701) with COMPONENTS.md documenting CSS foundation for buttons, switch, chip, modal, toast. JS helpers and full usage still pending. ROADMAP/TODO still reference main; default is root.
 
 ## Ordered execution queue
 | ID | Priority | Next action | Acceptance evidence |
 |---|---|---|---|
-| 01 | P0 | Inspect reported feat/reusable-ui-components branch and actual commit/PR existence; compare with #4 preview, #5 doc audit and #6 palette. | Exact SHA/PR evidence; resume existing work rather than duplicate it. |
+| 01 | P0 | Inspected feat/reusable-ui-components: CSS foundation + COMPONENTS.md present; no PR yet. Resume by finishing JS helpers rather than duplicating. | Branch SHA confirmed; COMPONENTS.md reviewed. |
 | 02 | P0 | Finish reusable JS helpers, tabs, modal/toast/switch/chip and interaction state wiring; guard duplicate sends and retries. | npm test, lint, build and double-tap/failure regression. |
 | 03 | P0 | Complete demo retry/react/forward and keyboard/focus/screen-reader paths; disable unsupported controls. | Responsive browser checks and accessible labels; clear demo-only delivery. |
 | 04 | P1 | Connect pinned canonical cog/assets and sound preferences; add off-screen pause and reduced-motion fallbacks. | Mute/volume and motion tests, no forced audio. |
@@ -23,4 +23,4 @@ README describes functional local demo; screenshot reports branch work and an un
 - Keep plans outside public deployment output. Check CI/deployment status separately; docs commits are not product release evidence.
 
 ## Sources
-Repository README, existing planning documents where present, and open PR metadata inspected on 2026-11-25. No code tests or live infrastructure verification performed during this documentation pass.
+Repository README, existing planning documents, open PR metadata, and feat/reusable-ui-components tree inspected on 2026-11-25. No code tests or live infrastructure verification performed during this documentation pass.
