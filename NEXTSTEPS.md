@@ -3,16 +3,23 @@
 Updated 2026-11-25 (AWST). Canonical default branch: `root`. This is the runnable queue, not a release certification.
 
 ## Baseline and dependencies
-README describes functional local demo; screenshot reports branch work and an unsubmitted PR form, not merged evidence. Open PRs #4–#7 observed. Existing ROADMAP says main, but GitHub default is root; use root.
+README describes functional local demo. Open PRs #4–#7 observed. Existing ROADMAP says main, but GitHub default is root; use root.
+
+## Inspection evidence (2026-11-25)
+- Branch `feat/reusable-ui-components` exists at SHA `d4cf8254f8bf4ff4702e5eb4b9cb4b30056b8751`.
+- Contains `ui.js` with reusable helpers: `showToast`, `setLoading`, `preventDuplicate`, `openDialog`, `closeDialog`.
+- `app.js` imports and uses them for send-guard and toasts; `styles.css` has expanded interaction states (loading, selected, switch, chip, focus-visible).
+- No open PR for this branch; related open PRs remain #4 (consolidated preview), #5 (docs audit), #6 (palette), #7 (naming).
+- Do not duplicate; resume from this branch work when integrating.
 
 ## Ordered execution queue
 | ID | Priority | Next action | Acceptance evidence |
 |---|---|---|---|
-| 01 | P0 | Inspect reported feat/reusable-ui-components branch and actual commit/PR existence; compare with #4 preview, #5 doc audit and #6 palette. | Exact SHA/PR evidence; resume existing work rather than duplicate it. |
-| 02 | P0 | Finish reusable JS helpers, tabs, modal/toast/switch/chip and interaction state wiring; guard duplicate sends and retries. | npm test, lint, build and double-tap/failure regression. |
-| 03 | P0 | Complete demo retry/react/forward and keyboard/focus/screen-reader paths; disable unsupported controls. | Responsive browser checks and accessible labels; clear demo-only delivery. |
-| 04 | P1 | Connect pinned canonical cog/assets and sound preferences; add off-screen pause and reduced-motion fallbacks. | Mute/volume and motion tests, no forced audio. |
-| 05 | P1 | Design backend/session, contact privacy and encrypted-message threat model before real messaging. | Cross-user isolation and protocol review; no encryption claims until proven. |
+| 01 | P0 | Integrate `ui.js` helpers and interaction-state CSS from `feat/reusable-ui-components` into root; wire preventDuplicate on send and other high-impact actions. | Diff review, npm test/lint/build pass, no regression in local demo persistence. |
+| 02 | P0 | Complete demo retry/react/forward and keyboard/focus/screen-reader paths; disable unsupported controls with clear labels. | Responsive browser checks and accessible labels; clear demo-only delivery. |
+| 03 | P1 | Connect pinned canonical cog/assets and sound preferences; add off-screen pause and reduced-motion fallbacks. | Mute/volume and motion tests, no forced audio. |
+| 04 | P1 | Design backend/session, contact privacy and encrypted-message threat model before real messaging. | Cross-user isolation and protocol review; no encryption claims until proven. |
+| 05 | P2 | Reconcile palette PR #6 and naming PR #7 with integrated UI. | Colour inventory and asset references verified. |
 
 
 ## Execution and evidence rules
@@ -23,4 +30,4 @@ README describes functional local demo; screenshot reports branch work and an un
 - Keep plans outside public deployment output. Check CI/deployment status separately; docs commits are not product release evidence.
 
 ## Sources
-Repository README, existing planning documents where present, and open PR metadata inspected on 2026-11-25. No code tests or live infrastructure verification performed during this documentation pass.
+Repository README, existing planning documents, open PR metadata, and branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25. No code tests or live infrastructure verification performed during this documentation pass.
