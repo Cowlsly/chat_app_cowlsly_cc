@@ -6,7 +6,7 @@ Build `cowlsly.cc` into Cowlsly's private messaging and calling service, inspire
 
 The interface must feel alive and mechanical: real working controls, animated switches, clear effects, optional UI sounds, and the shared Cowlsly moving-cog visual system adapted for messaging and calls.
 
-Default branch: `main`.
+Default branch: `root`.
 
 ## Product principles
 
@@ -110,4 +110,4 @@ The messenger is not production-ready until the working-control standard, privac
 
 ## Current execution handoff (2026-11-25)
 
-Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered, evidence-gated execution queue, recent open PR references and acceptance tests. GitHub default branch is root, not main. The reported component branch is unverified until inspected. Existing milestones and historical completion evidence above are retained; reconcile them with current code and CI before claiming completion. Update the TODO and NEXTSTEPS together after each work shift.
+Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered, evidence-gated execution queue, recent open PR references and acceptance tests. GitHub default branch is root. The feat/reusable-ui-components branch has CSS foundation and COMPONENTS.md; JS helpers pending. Existing milestones and historical completion evidence above are retained; reconcile them with current code and CI before claiming completion. Update the TODO and NEXTSTEPS together after each work shift.
