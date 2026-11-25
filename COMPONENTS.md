@@ -13,7 +13,14 @@ States: hover, :active (pressed), :focus-visible, :disabled, `.selected` / `[ari
 - `.switch` wrapper with checkbox + `.knob` for toggle controls (sound, motion).
 
 ## Chip
-- `.chip` for tags, status, or filters.
+- `.chip` for tags, status, or filters. Helper `makeChip()` available.
+
+## Helpers (components.js)
+- `setLoading(el, on)` — adds `.loading`, disables, sets aria-busy
+- `setPressed(el, on)` — toggles selected + aria-pressed
+- `toast(text, ms)` — status toast
+- `guardOnce(fn, delay)` — prevents duplicate high-impact actions
+- `makeChip(text, selected)`
 
 ## Others (existing)
 - Modal: native `<dialog>` + `.dialog-card`
@@ -21,4 +28,4 @@ States: hover, :active (pressed), :focus-visible, :disabled, `.selected` / `[ari
 - Input: standard form controls with focus styles
 - Menu: `.menu-grid` in action dialog
 
-Next: extract JS helpers, add tab/chip usage, cog animations, full a11y audit.
+Next: tabs, full a11y audit, cog animations, reduced-motion pause off-screen.

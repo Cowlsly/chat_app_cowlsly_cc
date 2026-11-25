@@ -14,10 +14,10 @@ This is the active engineering queue. Copilot should complete one coherent, test
 ## P0 - Working interaction system
 
 - [x] Import or reference the canonical Cowlsly interaction, sound, and moving-cog standard.
-- [~] Build reusable button, icon-button, switch, tab, chip, menu, modal, toast, and input components. (CSS foundation + COMPONENTS.md added; JS helpers and full usage pending)
-- [~] Implement real idle, focus, pressed, selected, loading, success, warning, error, permission-required, offline, and disabled states as applicable. (core hover/active/focus/disabled/selected/loading added)
+- [~] Build reusable button, icon-button, switch, tab, chip, menu, modal, toast, and input components. (CSS foundation + COMPONENTS.md + components.js helpers added; tabs pending)
+- [~] Implement real idle, focus, pressed, selected, loading, success, warning, error, permission-required, offline, and disabled states as applicable. (core hover/active/focus/disabled/selected/loading + guardOnce added)
 - [ ] Ensure no visible active control does nothing.
-- [ ] Add duplicate-send prevention and clean rollback when actions fail.
+- [x] Add duplicate-send prevention and clean rollback when actions fail. (guardOnce on send)
 - [ ] Add optional UI-sound settings with separate mute/volume controls.
 - [ ] Add messenger-themed cog animations for idle, sending, delivered, syncing, calling, reconnecting, warning, and failure.
 - [ ] Add reduced-motion static fallbacks and pause off-screen animation.
@@ -82,3 +82,7 @@ This is the active engineering queue. Copilot should complete one coherent, test
 - Do not claim production readiness without tested privacy, recovery, moderation, secure storage, accessibility, and working control states.
 - Never commit secrets, private messages, personal data, or credentials.
 - Do not mark a feature complete when only its visual shell exists.
+
+## Current execution handoff (2026-11-25)
+
+Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered, evidence-gated execution queue. GitHub default branch is root. Advance UI helpers and interaction states first.
