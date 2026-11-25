@@ -14,8 +14,8 @@ This is the active engineering queue. Copilot should complete one coherent, test
 ## P0 - Working interaction system
 
 - [x] Import or reference the canonical Cowlsly interaction, sound, and moving-cog standard.
-- [ ] Build reusable button, icon-button, switch, tab, chip, menu, modal, toast, and input components.
-- [ ] Implement real idle, focus, pressed, selected, loading, success, warning, error, permission-required, offline, and disabled states as applicable.
+- [~] Build reusable button, icon-button, switch, tab, chip, menu, modal, toast, and input components. (CSS foundation + COMPONENTS.md added; JS helpers and full usage pending)
+- [~] Implement real idle, focus, pressed, selected, loading, success, warning, error, permission-required, offline, and disabled states as applicable. (core hover/active/focus/disabled/selected/loading added)
 - [ ] Ensure no visible active control does nothing.
 - [ ] Add duplicate-send prevention and clean rollback when actions fail.
 - [ ] Add optional UI-sound settings with separate mute/volume controls.
