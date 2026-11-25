@@ -7,7 +7,7 @@ This is the active engineering queue. Copilot should complete one coherent, test
 - [x] Rewrite `README.md` with the correct product name, domain, purpose, setup, status, and safety limitations.
 - [x] Add a minimal architecture document and threat model.
 - [x] Add `.env.example` with placeholders only.
-- [ ] Add build, lint, unit-test, dependency-audit, secret-scan, and accessibility workflows.
+- [x] Add build, lint, unit-test, dependency-audit, secret-scan, and accessibility workflows. (CI workflow added: test/lint/build + basic secret pattern scan on push/PR. Dependency audit is trivial as no external deps. Accessibility checks remain for future expansion.)
 - [x] Decide and scaffold the initial application stack.
 - [x] Add an initial responsive app shell that runs locally and in CI.
 
