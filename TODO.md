@@ -26,7 +26,7 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 - [x] Build conversation list, empty state, search, compose, and new-chat flow.
 - [x] Build a direct-message view with local demo persistence or a clearly documented backend contract.
-- [ ] Make send, retry, reply, react, edit, delete, save, copy, forward, mute, block, and report actions genuinely work within the current scope.
+- [ ] Make send, retry, reply, react, edit, delete, save, copy, forward, mute, block, and report actions genuinely work within the current scope. (demo react + forward added 2026-11-25; still local-only)
 - [ ] Add timestamps, sent/delivered/read demo states, typing state, drafts, and failed-message recovery.
 - [x] Add responsive behaviour for narrow phone, Fold 6 outer screen, Fold 6 inner screen, tablet, and desktop.
 - [ ] Add keyboard navigation, focus order, screen-reader labels, and contrast tests.
@@ -85,4 +85,4 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 ## Current execution handoff (2026-11-25)
 
-Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered, evidence-gated execution queue, recent open PR references and acceptance tests. GitHub default branch is root, not main. The reported component branch is unverified until inspected. Existing milestones and historical completion evidence above are retained; reconcile them with current code and CI before claiming completion. Update the TODO and NEXTSTEPS together after each work shift.
+Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered, evidence-gated execution queue, recent open PR references and acceptance tests. GitHub default branch is root, not main. The reported component branch is unverified until inspected. Existing milestones and historical completion evidence above are retained; reconcile them with current code and CI before claiming completion. Update the TODO and NEXTSTEPS together after each work shift. Demo react and forward actions added on branch feat/demo-actions-and-docs-20261125.
