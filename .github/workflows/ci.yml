@@ -40,8 +40,10 @@ jobs:
       - name: Secret scan (basic)
         run: |
           # Lightweight check for common secret patterns
-          if grep -rE '(api[_-]?key|secret|password|token)\s*[:=]\s*["\'][a-zA-Z0-9]{20,}' --exclude-dir=node_modules --exclude-dir=.git .; then
-            echo "Potential secrets detected"; exit 1;
+          pattern='(api[_-]?key|secret|password|token)[[:space:]]*[:=][[:space:]]*["'"'"'][a-zA-Z0-9]{20,}'
+          if grep -rE "$pattern" --exclude-dir=node_modules --exclude-dir=.git .; then
+            echo "Potential secrets detected"
+            exit 1
           else
-            echo "No obvious secrets found.";
+            echo "No obvious secrets found."
           fi
