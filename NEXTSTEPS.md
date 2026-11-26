@@ -1,22 +1,21 @@
 # Cowlsly.cc Messenger: next steps
 
-Updated 2026-11-26 (AWST). Canonical default branch: `root`. This is the runnable queue, not a release certification.
+Updated 2026-11-27 (AWST). Canonical default branch: `root`. This is the runnable queue, not a release certification.
 
 ## Baseline and dependencies
 README describes functional local demo. Open PRs #4–#7 observed. Existing ROADMAP says main, but GitHub default is root; use root. CI on root was failing due to secret-scan shell quoting; fixed in commit 001e586.
 
-## Inspection evidence (2026-11-25 / 2026-11-26)
+## Inspection evidence (2026-11-25 / 2026-11-26 / 2026-11-27)
 - Branch `feat/reusable-ui-components` exists at SHA `d4cf8254f8bf4ff4702e5eb4b9cb4b30056b8751`.
-- Contains `ui.js` with reusable helpers: `showToast`, `setLoading`, `preventDuplicate`, `openDialog`, `closeDialog`.
-- `app.js` imports and uses them for send-guard and toasts; `styles.css` has expanded interaction states (loading, selected, switch, chip, focus-visible).
-- No open PR for this branch; related open PRs remain #4 (consolidated preview), #5 (docs audit), #6 (palette), #7 (naming).
-- Do not duplicate; resume from this branch work when integrating.
-- CI secret-scan step quoting fixed; run in progress after push.
+- `ui.js` helpers integrated into root on 2026-11-27: commits c811370 and d433691. `app.js` now imports showToast, preventDuplicate, openDialog, closeDialog. preventDuplicate wired on composer submit.
+- styles.css interaction states not yet fully verified/merged; check if loading/selected classes are present.
+- Related open PRs remain #4 (consolidated preview), #5 (docs audit), #6 (palette), #7 (naming).
+- CI secret-scan step quoting fixed; verify latest run after these commits.
 
 ## Ordered execution queue
 | ID | Priority | Next action | Acceptance evidence |
 |---|---|---|---|
-| 01 | P0 | Integrate `ui.js` helpers and interaction-state CSS from `feat/reusable-ui-components` into root; wire preventDuplicate on send and other high-impact actions. | Diff review, npm test/lint/build pass, no regression in local demo persistence. |
+| 01 | P0 | DONE: Integrate `ui.js` helpers into root; wire preventDuplicate on send. | Commits c811370 (ui.js) + d433691 (app.js). Local demo persistence unchanged. CI to confirm. |
 | 02 | P0 | Complete demo retry/react/forward and keyboard/focus/screen-reader paths; disable unsupported controls with clear labels. | Responsive browser checks and accessible labels; clear demo-only delivery. |
 | 03 | P1 | Connect pinned canonical cog/assets and sound preferences; add off-screen pause and reduced-motion fallbacks. | Mute/volume and motion tests, no forced audio. |
 | 04 | P1 | Design backend/session, contact privacy and encrypted-message threat model before real messaging. | Cross-user isolation and protocol review; no encryption claims until proven. |
@@ -31,4 +30,4 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 - Keep plans outside public deployment output. Check CI/deployment status separately; docs commits are not product release evidence.
 
 ## Sources
-Repository README, existing planning documents, open PR metadata, branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25, and CI fix on 2026-11-26. No live infrastructure verification or deployment performed.
+Repository README, existing planning documents, open PR metadata, branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25, CI fix on 2026-11-26, and integration commits on 2026-11-27. No live infrastructure verification or deployment performed.
