@@ -1,16 +1,17 @@
 # Cowlsly.cc Messenger: next steps
 
-Updated 2026-11-25 (AWST). Canonical default branch: `root`. This is the runnable queue, not a release certification.
+Updated 2026-11-26 (AWST). Canonical default branch: `root`. This is the runnable queue, not a release certification.
 
 ## Baseline and dependencies
-README describes functional local demo. Open PRs #4–#7 observed. Existing ROADMAP says main, but GitHub default is root; use root.
+README describes functional local demo. Open PRs #4–#7 observed. Existing ROADMAP says main, but GitHub default is root; use root. CI on root was failing due to secret-scan shell quoting; fixed in commit 001e586.
 
-## Inspection evidence (2026-11-25)
+## Inspection evidence (2026-11-25 / 2026-11-26)
 - Branch `feat/reusable-ui-components` exists at SHA `d4cf8254f8bf4ff4702e5eb4b9cb4b30056b8751`.
 - Contains `ui.js` with reusable helpers: `showToast`, `setLoading`, `preventDuplicate`, `openDialog`, `closeDialog`.
 - `app.js` imports and uses them for send-guard and toasts; `styles.css` has expanded interaction states (loading, selected, switch, chip, focus-visible).
 - No open PR for this branch; related open PRs remain #4 (consolidated preview), #5 (docs audit), #6 (palette), #7 (naming).
 - Do not duplicate; resume from this branch work when integrating.
+- CI secret-scan step quoting fixed; run in progress after push.
 
 ## Ordered execution queue
 | ID | Priority | Next action | Acceptance evidence |
@@ -30,4 +31,4 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 - Keep plans outside public deployment output. Check CI/deployment status separately; docs commits are not product release evidence.
 
 ## Sources
-Repository README, existing planning documents, open PR metadata, and branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25. No code tests or live infrastructure verification performed during this documentation pass.
+Repository README, existing planning documents, open PR metadata, branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25, and CI fix on 2026-11-26. No live infrastructure verification or deployment performed.
