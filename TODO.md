@@ -14,10 +14,10 @@ This is the active engineering queue. Copilot should complete one coherent, test
 ## P0 - Working interaction system
 
 - [x] Import or reference the canonical Cowlsly interaction, sound, and moving-cog standard.
-- [ ] Build reusable button, icon-button, switch, tab, chip, menu, modal, toast, and input components. (Partial: `feat/reusable-ui-components` has ui.js helpers for toast/loading/preventDuplicate + expanded CSS states; integrate next.)
-- [ ] Implement real idle, focus, pressed, selected, loading, success, warning, error, permission-required, offline, and disabled states as applicable.
+- [x] Build reusable button, icon-button, switch, tab, chip, menu, modal, toast, and input components. (Partial complete: `ui.js` helpers for toast/loading/preventDuplicate + expanded CSS states integrated on `feat/integrate-ui-helpers-20261127`.)
+- [ ] Implement real idle, focus, pressed, selected, loading, success, warning, error, permission-required, offline, and disabled states as applicable. (Partial: CSS states added.)
 - [ ] Ensure no visible active control does nothing.
-- [ ] Add duplicate-send prevention and clean rollback when actions fail. (Partial helpers exist on branch.)
+- [x] Add duplicate-send prevention and clean rollback when actions fail. (Wired on send via preventDuplicate.)
 - [ ] Add optional UI-sound settings with separate mute/volume controls.
 - [ ] Add messenger-themed cog animations for idle, sending, delivered, syncing, calling, reconnecting, warning, and failure.
 - [ ] Add reduced-motion static fallbacks and pause off-screen animation.
@@ -83,6 +83,6 @@ This is the active engineering queue. Copilot should complete one coherent, test
 - Never commit secrets, private messages, personal data, or credentials.
 - Do not mark a feature complete when only its visual shell exists.
 
-## Current execution handoff (2026-11-25)
+## Current execution handoff (2026-11-27)
 
-Inspected `feat/reusable-ui-components@d4cf8254f8bf4ff4702e5eb4b9cb4b30056b8751`: contains reusable `ui.js` helpers and expanded interaction CSS. Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered, evidence-gated execution queue. GitHub default branch is root, not main. Next: integrate the helpers into root without duplicating existing work. Existing milestones and historical completion evidence above are retained; reconcile them with current code and CI before claiming completion. Update the TODO and NEXTSTEPS together after each work shift.
+Integrated reusable `ui.js` helpers and expanded interaction CSS from prior feature branch into `feat/integrate-ui-helpers-20261127`. Wired `preventDuplicate` on send and replaced inline toasts. Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered, evidence-gated execution queue. GitHub default branch is root, not main. Next: complete remaining demo actions (retry/react/forward) and accessibility paths. Existing milestones and historical completion evidence above are retained; reconcile them with current code and CI before claiming completion. Update the TODO and NEXTSTEPS together after each work shift.
