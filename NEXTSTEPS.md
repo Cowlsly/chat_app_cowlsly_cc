@@ -12,6 +12,7 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 - Related open PRs remain #4 (consolidated preview), #5 (docs audit), #6 (palette), #7 (naming).
 - CI secret-scan step quoting fixed; verify latest run after these commits.
 - **PR #4 review (2026-11-28):** non-draft but `mergeable_state=dirty`. August head validated green at the time; base has since diverged (current flat app.js + ui.js vs Vite src/ in PR). Useful carry-overs: state normalisation/escaping/tests, staticwebapp.config.json security headers + SPA fallback, explicit Node 24 CI verification. Comment posted with ordered next steps (rebase/port, lockfile, re-CI). Architecture decision still required before merge.
+- **2026-11-28 port:** Added `public/staticwebapp.config.json` with SPA navigationFallback and baseline security headers (CSP, Referrer-Policy, X-Content-Type-Options, X-Frame-Options, Permissions-Policy) selectively from PR #4. Current flat structure preserved. No lockfile or major architecture change yet.
 
 ## Ordered execution queue
 | ID | Priority | Next action | Acceptance evidence |
@@ -21,7 +22,7 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 | 03 | P1 | Connect pinned canonical cog/assets and sound preferences; add off-screen pause and reduced-motion fallbacks. | Mute/volume and motion tests, no forced audio. |
 | 04 | P1 | Design backend/session, contact privacy and encrypted-message threat model before real messaging. | Cross-user isolation and protocol review; no encryption claims until proven. |
 | 05 | P2 | Reconcile palette PR #6 and naming PR #7 with integrated UI. | Colour inventory and asset references verified. |
-| 06 | P0 | Resolve PR #4 architecture: rebase or selectively port Vite state/tests + staticwebapp config into current root flat structure (or migrate). | Updated head green on CI; no conflicts; demo still persists locally; security headers present. |
+| 06 | P0 | Resolve PR #4 architecture: rebase or selectively port Vite state/tests + staticwebapp config into current root flat structure (or migrate). | Updated head green on CI; no conflicts; demo still persists locally; security headers present. **Partial: staticwebapp.config.json ported (this branch).** Remaining: state tests/normalisation if desired, lockfile, CI green, architecture decision. |
 
 
 ## Execution and evidence rules
@@ -32,4 +33,4 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 - Keep plans outside public deployment output. Check CI/deployment status separately; docs commits are not product release evidence.
 
 ## Sources
-Repository README, existing planning documents, open PR metadata, branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25, CI fix on 2026-11-26, and integration commits on 2026-11-27. PR #4 review comment added 2026-11-28. No live infrastructure verification or deployment performed.
+Repository README, existing planning documents, open PR metadata, branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25, CI fix on 2026-11-26, and integration commits on 2026-11-27. PR #4 review comment added 2026-11-28. Staticwebapp config ported 2026-11-28. No live infrastructure verification or deployment performed.
