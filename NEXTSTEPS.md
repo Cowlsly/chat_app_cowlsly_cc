@@ -33,3 +33,13 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 
 ## Sources
 Repository README, existing planning documents, open PR metadata, branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25, CI fix on 2026-11-26, and integration commits on 2026-11-27. PR #4 review comment added 2026-11-28. No live infrastructure verification or deployment performed.
+
+## Work completed 2026-11-28 (hourly session)
+- Fixed critical broken HTML escaping in `app.js` (incomplete entity map was a latent XSS risk in demo rendering).
+- Added basic state normalisation on load (chat/message limits, id cleaning, length caps) inspired by PR #4's state.js.
+- Added `public/staticwebapp.config.json` with SPA fallback and baseline security headers (CSP, X-Frame-Options, etc.).
+- Added `tests/state.test.mjs` covering the escape function; updated package.json test script.
+- Improved CI workflow (`.github/workflows/auto-build.yml`) to trigger on push/PR to root, run tests/lint/build, with concurrency.
+- Branch: `agent/port-state-security-from-pr4-2026-11-28`. PR #4 remains dirty/architecture-pending; this ports the highest-value safety pieces into the current flat structure without forcing a Vite migration.
+
+Next: verify CI green on this branch, reconcile remaining demo actions (retry/react/forward), then consider merging or further porting from PR #4/ #6.

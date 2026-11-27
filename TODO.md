@@ -85,4 +85,10 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 ## Current execution handoff (2026-11-27)
 
+## 2026-11-28 session notes
+- Fixed broken `esc` HTML escaping (security improvement for demo).
+- Ported basic state normalisation and added Azure Static Web Apps security config.
+- Added unit test for escaping. CI workflow now triggers on push/PR.
+
+
 Integrated `ui.js` helpers into root (commits c811370, d433691). preventDuplicate active on send. Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered queue. Next: complete remaining demo actions (retry/react/forward) and verify interaction CSS states. GitHub default branch is root. Existing milestones retained; reconcile with CI before claiming further completion.

@@ -1,7 +1,44 @@
 import { showToast, setLoading, preventDuplicate, openDialog, closeDialog } from './ui.js';
 const STORAGE_KEY='cowlsly-chat-demo-v1';
 const seed={active:'marla',sound:false,reducedMotion:false,chats:[{id:'marla',name:'Marla',type:'ai',status:'Online · AI contact',muted:false,blocked:false,messages:[{id:'m1',mine:false,text:'Hi Cowy — this is the Cowlsly Chat demo shell. Nothing here leaves this browser.',at:Date.now()-3600000,state:'read'},{id:'m2',mine:true,text:'Good. Keep it clear and simple.',at:Date.now()-3500000,state:'read'}]},{id:'support',name:'Cowlsly Support',type:'person',status:'Demo contact',muted:false,blocked:false,messages:[{id:'s1',mine:false,text:'Welcome to the messenger preview. Use the controls to test the interaction model.',at:Date.now()-7200000,state:'delivered'}]}]};
-const load=()=>{try{return {...seed,...JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}')}}catch{return structuredClone(seed)}};
+const load=()=>{
+  try {
+    const raw = JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}');
+    const merged = {...structuredClone(seed), ...raw};
+    // Basic normalisation: limit chats, clean messages
+    if (Array.isArray(merged.chats)) {
+      merged.chats = merged.chats.slice(0, 50).map((c, i) => {
+        if (!c || typeof c !== 'object') return null;
+        const id = typeof c.id === 'string' && /^[A-Za-z0-9_-]{1,80}$/.test(c.id.trim()) ? c.id.trim() : `restored-${i+1}`;
+        const messages = Array.isArray(c.messages) ? c.messages.slice(-200).map(m => {
+          if (!m || typeof m.text !== 'string') return null;
+          return {
+            id: typeof m.id === 'string' ? m.id.slice(0,40) : crypto.randomUUID(),
+            mine: !!m.mine,
+            text: m.text.trim().slice(0, 500),
+            at: typeof m.at === 'number' ? m.at : Date.now(),
+            state: ['sent','delivered','read'].includes(m.state) ? m.state : 'sent',
+            replyText: typeof m.replyText === 'string' ? m.replyText.slice(0,200) : '',
+            saved: !!m.saved,
+            edited: !!m.edited
+          };
+        }).filter(Boolean) : [];
+        return {
+          id,
+          name: typeof c.name === 'string' ? c.name.trim().slice(0,60) || `Contact ${i+1}` : `Contact ${i+1}`,
+          type: c.type === 'ai' ? 'ai' : 'person',
+          status: typeof c.status === 'string' ? c.status.slice(0,80) : 'Demo contact',
+          muted: !!c.muted,
+          blocked: !!c.blocked,
+          messages
+        };
+      }).filter(Boolean);
+      if (!merged.chats.length) return structuredClone(seed);
+      if (!merged.chats.some(c => c.id === merged.active)) merged.active = merged.chats[0].id;
+    }
+    return merged;
+  } catch { return structuredClone(seed); }
+};
 let state=load(); let replyTo=null; let editingId=null;
 const $=s=>document.querySelector(s); const shell=$('.app-shell'); const list=$('#conversation-list'); const messages=$('#messages'); const input=$('#message-input');
 const save=()=>localStorage.setItem(STORAGE_KEY,JSON.stringify(state));
