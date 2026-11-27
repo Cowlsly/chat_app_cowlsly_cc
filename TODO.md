@@ -83,6 +83,6 @@ This is the active engineering queue. Copilot should complete one coherent, test
 - Never commit secrets, private messages, personal data, or credentials.
 - Do not mark a feature complete when only its visual shell exists.
 
-## Current execution handoff (2026-11-27)
+## Current execution handoff (2026-11-28)
 
-Integrated `ui.js` helpers into root (commits c811370, d433691). preventDuplicate active on send. Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered queue. Next: complete remaining demo actions (retry/react/forward) and verify interaction CSS states. GitHub default branch is root. Existing milestones retained; reconcile with CI before claiming further completion.
+Integrated `ui.js` helpers into root (commits c811370, d433691). preventDuplicate active on send. Selectively ported `public/staticwebapp.config.json` (SPA fallback + baseline security headers) from PR #4 onto the current flat structure (branch feat/security-headers-spa-fallback-20261128). Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered queue. Next: complete remaining demo actions (retry/react/forward), verify interaction CSS states, and decide on further PR #4 porting (state tests). GitHub default branch is root. Existing milestones retained; reconcile with CI before claiming further completion.
