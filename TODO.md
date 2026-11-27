@@ -26,7 +26,7 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 - [x] Build conversation list, empty state, search, compose, and new-chat flow.
 - [x] Build a direct-message view with local demo persistence or a clearly documented backend contract.
-- [ ] Make send, retry, reply, react, edit, delete, save, copy, forward, mute, block, and report actions genuinely work within the current scope.
+- [ ] Make send, retry, reply, react, edit, delete, save, copy, forward, mute, block, and report actions genuinely work within the current scope. (Progress 2026-11-27: demo react 👍 toggle and local forward implemented; retry still pending.)
 - [ ] Add timestamps, sent/delivered/read demo states, typing state, drafts, and failed-message recovery.
 - [x] Add responsive behaviour for narrow phone, Fold 6 outer screen, Fold 6 inner screen, tablet, and desktop.
 - [ ] Add keyboard navigation, focus order, screen-reader labels, and contrast tests.
@@ -85,4 +85,4 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 ## Current execution handoff (2026-11-27)
 
-Integrated `ui.js` helpers into root (commits c811370, d433691). preventDuplicate active on send. Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered queue. Next: complete remaining demo actions (retry/react/forward) and verify interaction CSS states. GitHub default branch is root. Existing milestones retained; reconcile with CI before claiming further completion.
+Integrated `ui.js` helpers into root (commits c811370, d433691). preventDuplicate active on send. Demo react and forward added in branch feat/demo-react-forward-20261127. Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered queue. Next: add retry, verify interaction CSS states, and confirm CI. GitHub default branch is root. Existing milestones retained; reconcile with CI before claiming further completion.
