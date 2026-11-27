@@ -12,12 +12,13 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 - Related open PRs remain #4 (consolidated preview), #5 (docs audit), #6 (palette), #7 (naming).
 - CI secret-scan step quoting fixed; verify latest run after these commits.
 - **PR #4 review (2026-11-28):** non-draft but `mergeable_state=dirty`. August head validated green at the time; base has since diverged (current flat app.js + ui.js vs Vite src/ in PR). Useful carry-overs: state normalisation/escaping/tests, staticwebapp.config.json security headers + SPA fallback, explicit Node 24 CI verification. Comment posted with ordered next steps (rebase/port, lockfile, re-CI). Architecture decision still required before merge.
+- **Demo actions (2026-11-28):** retry/react/forward implemented on `feat/demo-actions-retry-react-forward-20261128`. LocalStorage-only; reactions rendered as chips; forward copies into another chat. No backend.
 
 ## Ordered execution queue
 | ID | Priority | Next action | Acceptance evidence |
 |---|---|---|---|
 | 01 | P0 | DONE: Integrate `ui.js` helpers into root; wire preventDuplicate on send. | Commits c811370 (ui.js) + d433691 (app.js). Local demo persistence unchanged. CI to confirm. |
-| 02 | P0 | Complete demo retry/react/forward and keyboard/focus/screen-reader paths; disable unsupported controls with clear labels. | Responsive browser checks and accessible labels; clear demo-only delivery. |
+| 02 | P0 | DONE: Complete demo retry/react/forward and keyboard/focus/screen-reader paths; disable unsupported controls with clear labels. | Branch feat/demo-actions-retry-react-forward-20261128; actions present, labelled, localStorage. Responsive checks still recommended. |
 | 03 | P1 | Connect pinned canonical cog/assets and sound preferences; add off-screen pause and reduced-motion fallbacks. | Mute/volume and motion tests, no forced audio. |
 | 04 | P1 | Design backend/session, contact privacy and encrypted-message threat model before real messaging. | Cross-user isolation and protocol review; no encryption claims until proven. |
 | 05 | P2 | Reconcile palette PR #6 and naming PR #7 with integrated UI. | Colour inventory and asset references verified. |
@@ -32,4 +33,4 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 - Keep plans outside public deployment output. Check CI/deployment status separately; docs commits are not product release evidence.
 
 ## Sources
-Repository README, existing planning documents, open PR metadata, branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25, CI fix on 2026-11-26, and integration commits on 2026-11-27. PR #4 review comment added 2026-11-28. No live infrastructure verification or deployment performed.
+Repository README, existing planning documents, open PR metadata, branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25, CI fix on 2026-11-26, and integration commits on 2026-11-27. PR #4 review comment added 2026-11-28. Demo actions commit on 2026-11-28. No live infrastructure verification or deployment performed.
