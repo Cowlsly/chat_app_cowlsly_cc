@@ -29,7 +29,7 @@ This is the active engineering queue. Copilot should complete one coherent, test
 - [ ] Make send, retry, reply, react, edit, delete, save, copy, forward, mute, block, and report actions genuinely work within the current scope. (React, retry, and forward demo actions added 2026-11-28 in app.js. Mute/block/report already in chat menu.)
 - [ ] Add timestamps, sent/delivered/read demo states, typing state, drafts, and failed-message recovery.
 - [x] Add responsive behaviour for narrow phone, Fold 6 outer screen, Fold 6 inner screen, tablet, and desktop.
-- [ ] Add keyboard navigation, focus order, screen-reader labels, and contrast tests.
+- [~] Add keyboard navigation, focus order, screen-reader labels, and contrast tests. (Partial 2026-11-28: arrow-key navigation on conversation listbox and messages, Escape closes search/reply, additional aria-labels and roles in app.js. Contrast tests still outstanding.)
 
 ## P1 - Accounts and devices
 
@@ -85,4 +85,4 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 ## Current execution handoff (2026-11-28)
 
-Integrated `ui.js` helpers into root (commits c811370, d433691). preventDuplicate active on send. Demo react toggle (👍) added in app.js (a3f4d63). Retry and forward demo actions added (this commit). Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered queue. Next: keyboard/focus/screen-reader paths and interaction CSS states. GitHub default branch is root. Existing milestones retained; reconcile with CI before claiming further completion.
+Keyboard navigation added for conversation list (arrow keys, listbox roles) and messages (arrow keys, aria-labels). Escape closes message search and reply banner. Branch a11y/keyboard-nav-20261128. Next: interaction CSS states and contrast verification. GitHub default branch is root. Existing milestones retained; reconcile with CI before claiming further completion.
