@@ -29,7 +29,7 @@ This is the active engineering queue. Copilot should complete one coherent, test
 - [ ] Make send, retry, reply, react, edit, delete, save, copy, forward, mute, block, and report actions genuinely work within the current scope. (React, retry, and forward demo actions added 2026-11-28 in app.js. Mute/block/report already in chat menu.)
 - [ ] Add timestamps, sent/delivered/read demo states, typing state, drafts, and failed-message recovery.
 - [x] Add responsive behaviour for narrow phone, Fold 6 outer screen, Fold 6 inner screen, tablet, and desktop.
-- [ ] Add keyboard navigation, focus order, screen-reader labels, and contrast tests.
+- [~] Add keyboard navigation, focus order, screen-reader labels, and contrast tests. (Arrow-key navigation + aria-current on active conversation row + focus move to composer on open added 2026-11-28. Contrast and full screen-reader pass still outstanding.)
 
 ## P1 - Accounts and devices
 
@@ -85,4 +85,4 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 ## Current execution handoff (2026-11-28)
 
-Integrated `ui.js` helpers into root (commits c811370, d433691). preventDuplicate active on send. Demo react toggle (👍) added in app.js (a3f4d63). Retry and forward demo actions added (this commit). Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered queue. Next: keyboard/focus/screen-reader paths and interaction CSS states. GitHub default branch is root. Existing milestones retained; reconcile with CI before claiming further completion.
+Integrated `ui.js` helpers into root (commits c811370, d433691). preventDuplicate active on send. Demo react toggle (👍) added in app.js (a3f4d63). Retry and forward demo actions added. Keyboard navigation for conversation list (arrows/Home/End), aria-current on active row, and focus transfer to composer on chat open added in branch a11y/keyboard-focus-20261128. Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered queue. Next: remaining interaction CSS states, contrast verification, and PR #4 architecture decision. GitHub default branch is root. Existing milestones retained; reconcile with CI before claiming further completion.
