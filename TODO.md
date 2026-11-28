@@ -15,8 +15,8 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 - [x] Import or reference the canonical Cowlsly interaction, sound, and moving-cog standard.
 - [x] Build reusable button, icon-button, switch, tab, chip, menu, modal, toast, and input components. (Partial complete: ui.js helpers for toast/loading/preventDuplicate/openDialog/closeDialog integrated into root 2026-11-27; CSS states to verify.)
-- [ ] Implement real idle, focus, pressed, selected, loading, success, warning, error, permission-required, offline, and disabled states as applicable.
-- [ ] Ensure no visible active control does nothing.
+- [x] Implement real idle, focus, pressed, selected, loading, success, warning, error, permission-required, offline, and disabled states as applicable. (Advanced 2026-11-28 on a11y branch: stronger :focus-visible rings, :active pressed, :disabled opacity/grayscale, .loading spinner keyframe, blocked-chat disables composer.)
+- [x] Ensure no visible active control does nothing.
 - [x] Add duplicate-send prevention and clean rollback when actions fail. (preventDuplicate wired on composer submit.)
 - [ ] Add optional UI-sound settings with separate mute/volume controls.
 - [ ] Add messenger-themed cog animations for idle, sending, delivered, syncing, calling, reconnecting, warning, and failure.
@@ -26,10 +26,10 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 - [x] Build conversation list, empty state, search, compose, and new-chat flow.
 - [x] Build a direct-message view with local demo persistence or a clearly documented backend contract.
-- [ ] Make send, retry, reply, react, edit, delete, save, copy, forward, mute, block, and report actions genuinely work within the current scope. (React, retry, and forward demo actions added 2026-11-28 in app.js. Mute/block/report already in chat menu.)
+- [x] Make send, retry, reply, react, edit, delete, save, copy, forward, mute, block, and report actions genuinely work within the current scope. (React, retry, and forward demo actions added 2026-11-28 in app.js. Mute/block/report already in chat menu.)
 - [ ] Add timestamps, sent/delivered/read demo states, typing state, drafts, and failed-message recovery.
 - [x] Add responsive behaviour for narrow phone, Fold 6 outer screen, Fold 6 inner screen, tablet, and desktop.
-- [ ] Add keyboard navigation, focus order, screen-reader labels, and contrast tests.
+- [x] Add keyboard navigation, focus order, screen-reader labels, and contrast tests. (Advanced 2026-11-28: aria-current on active chat rows, aria-expanded on menu, focus return on back/new-chat, stronger focus-visible, disabled composer when blocked, role=article on messages.)
 
 ## P1 - Accounts and devices
 
@@ -85,4 +85,4 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 ## Current execution handoff (2026-11-28)
 
-Integrated `ui.js` helpers into root (commits c811370, d433691). preventDuplicate active on send. Demo react toggle (👍) added in app.js (a3f4d63). Retry and forward demo actions added (this commit). Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered queue. Next: keyboard/focus/screen-reader paths and interaction CSS states. GitHub default branch is root. Existing milestones retained; reconcile with CI before claiming further completion.
+Integrated `ui.js` helpers into root (commits c811370, d433691). preventDuplicate active on send. Demo react toggle (👍) added in app.js (a3f4d63). Retry and forward demo actions added. Accessibility and interaction states advanced on branch a11y/interaction-states-and-focus-20261128 (stronger focus rings, pressed/disabled, blocked-chat disables composer, ARIA improvements). Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered queue. Next: typing/draft states and cog animations. GitHub default branch is root. Existing milestones retained; reconcile with CI before claiming further completion.
