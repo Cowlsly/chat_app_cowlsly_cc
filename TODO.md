@@ -15,7 +15,7 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 - [x] Import or reference the canonical Cowlsly interaction, sound, and moving-cog standard.
 - [x] Build reusable button, icon-button, switch, tab, chip, menu, modal, toast, and input components. (Partial complete: ui.js helpers for toast/loading/preventDuplicate/openDialog/closeDialog integrated into root 2026-11-27; CSS states to verify.)
-- [ ] Implement real idle, focus, pressed, selected, loading, success, warning, error, permission-required, offline, and disabled states as applicable. (Partial: stronger focus-visible outlines and .loading class added 2026-11-28.)
+- [ ] Implement real idle, focus, pressed, selected, loading, success, warning, error, permission-required, offline, and disabled states as applicable. (Partial: stronger focus-visible outlines and .loading class added 2026-11-28. Further: :active pressed, .active selected inset, disabled styles, loading overlay in styles.css 42c8ae8.)
 - [ ] Ensure no visible active control does nothing.
 - [x] Add duplicate-send prevention and clean rollback when actions fail. (preventDuplicate wired on composer submit.)
 - [ ] Add optional UI-sound settings with separate mute/volume controls.
@@ -29,7 +29,7 @@ This is the active engineering queue. Copilot should complete one coherent, test
 - [ ] Make send, retry, reply, react, edit, delete, save, copy, forward, mute, block, and report actions genuinely work within the current scope. (React, retry, and forward demo actions added 2026-11-28 in app.js. Mute/block/report already in chat menu.)
 - [ ] Add timestamps, sent/delivered/read demo states, typing state, drafts, and failed-message recovery.
 - [x] Add responsive behaviour for narrow phone, Fold 6 outer screen, Fold 6 inner screen, tablet, and desktop.
-- [ ] Add keyboard navigation, focus order, screen-reader labels, and contrast tests. (Partial progress 2026-11-28: aria-current + descriptive aria-labels on chat rows, message aria-labels, improved focus-visible on rows/actions, datetime on times. Contrast and full keyboard path testing still open.)
+- [ ] Add keyboard navigation, focus order, screen-reader labels, and contrast tests. (Partial progress 2026-11-28: aria-current + descriptive aria-labels on chat rows, message aria-labels, improved focus-visible on rows/actions, datetime on times. Contrast and full keyboard path testing still open. Focus outline contrast raised to solid #55d8ff.)
 
 ## P1 - Accounts and devices
 
@@ -85,4 +85,4 @@ This is the active engineering queue. Copilot should complete one coherent, test
 
 ## Current execution handoff (2026-11-28)
 
-Integrated `ui.js` helpers into root (commits c811370, d433691). preventDuplicate active on send. Demo react toggle (👍) added in app.js (a3f4d63). Retry and forward demo actions added. Accessibility advances: stronger focus-visible styles, aria-current on active chats, descriptive aria-labels on conversation rows and messages (commits 40712ec, 98296ce). Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered queue. Next: remaining interaction CSS states, contrast verification, and full keyboard path testing. GitHub default branch is root. Existing milestones retained; reconcile with CI before claiming further completion.
+Integrated `ui.js` helpers into root (commits c811370, d433691). preventDuplicate active on send. Demo react toggle (👍) added in app.js (a3f4d63). Retry and forward demo actions added. Accessibility advances: stronger focus-visible styles, aria-current on active chats, descriptive aria-labels on conversation rows and messages (commits 40712ec, 98296ce). Interaction-state CSS polish: pressed (:active), selected (.active inset), disabled, improved loading (commit 42c8ae8 on branch). Read [NEXTSTEPS.md](NEXTSTEPS.md) for the ordered queue. Next: contrast verification and full keyboard path testing; resolve PR #4 architecture. GitHub default branch is root. Existing milestones retained; reconcile with CI before claiming further completion.
