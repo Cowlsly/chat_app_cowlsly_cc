@@ -1,3 +1,7 @@
+<!-- cowlsly-labs-animated-banner -->
+<p align="center"><img src="https://raw.githubusercontent.com/Cowlsly/cowlsly-labs-public-repository-template/e3b06c3a7e63e0aafdd38af2d8437fc05802a971/assets/branding/animations/cowlsly-labs-twin-dance.gif" width="280" alt="Cowlsly Labs — Marla and Ussylia dancing" /></p>
+<!-- /cowlsly-labs-animated-banner -->
+
 # Cowlsly Chat — Cowlsly.cc Messenger
 
 [![Automatic Build](https://github.com/Cowlsly/chat_app_cowlsly_cc/actions/workflows/auto-build.yml/badge.svg?branch=root)](https://github.com/Cowlsly/chat_app_cowlsly_cc/actions/workflows/auto-build.yml)
