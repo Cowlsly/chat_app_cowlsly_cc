@@ -8,21 +8,22 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 ## Inspection evidence (2026-11-25 / 2026-11-26 / 2026-11-27 / 2026-11-28)
 - Branch `feat/reusable-ui-components` exists at SHA `d4cf8254f8bf4ff4702e5eb4b9cb4b30056b8751`.
 - `ui.js` helpers integrated into root on 2026-11-27: commits c811370 and d433691. `app.js` now imports showToast, preventDuplicate, openDialog, closeDialog. preventDuplicate wired on composer submit.
-- styles.css interaction states not yet fully verified/merged; check if loading/selected classes are present.
+- styles.css interaction states advanced on a11y branch (2026-11-28): stronger :focus-visible, :active pressed, :disabled, .loading spinner.
 - Related open PRs remain #4 (consolidated preview), #5 (docs audit), #6 (palette), #7 (naming).
 - CI secret-scan step quoting fixed; verify latest run after these commits.
 - **PR #4 review (2026-11-28):** non-draft but `mergeable_state=dirty`. August head validated green at the time; base has since diverged (current flat app.js + ui.js vs Vite src/ in PR). Useful carry-overs: state normalisation/escaping/tests, staticwebapp.config.json security headers + SPA fallback, explicit Node 24 CI verification. Comment posted with ordered next steps (rebase/port, lockfile, re-CI). Architecture decision still required before merge.
-- **2026-11-28:** Demo react action added to message actions in app.js (commit a3f4d63). Toggles 👍 reaction locally. Retry and forward added in same session.
+- **2026-11-28:** Demo react action added to message actions in app.js (commit a3f4d63). Toggles 👍 reaction locally. Retry and forward added in same session. Accessibility improvements (ARIA, focus, disabled states) on branch a11y/interaction-states-and-focus-20261128.
 
 ## Ordered execution queue
 | ID | Priority | Next action | Acceptance evidence |
 |---|---|---|---|
 | 01 | P0 | DONE: Integrate `ui.js` helpers into root; wire preventDuplicate on send. | Commits c811370 (ui.js) + d433691 (app.js). Local demo persistence unchanged. CI to confirm. |
-| 02 | P0 | Complete demo retry/react/forward and keyboard/focus/screen-reader paths; disable unsupported controls with clear labels. React, retry, and forward demo actions now present. | Responsive browser checks and accessible labels; clear demo-only delivery. |
+| 02 | P0 | DONE (advanced): Complete demo retry/react/forward and keyboard/focus/screen-reader paths; disable unsupported controls with clear labels. React, retry, and forward demo actions present. Focus rings, pressed/disabled, ARIA-current/expanded, blocked-chat disables composer. | Responsive browser checks and accessible labels; clear demo-only delivery. |
 | 03 | P1 | Connect pinned canonical cog/assets and sound preferences; add off-screen pause and reduced-motion fallbacks. | Mute/volume and motion tests, no forced audio. |
 | 04 | P1 | Design backend/session, contact privacy and encrypted-message threat model before real messaging. | Cross-user isolation and protocol review; no encryption claims until proven. |
 | 05 | P2 | Reconcile palette PR #6 and naming PR #7 with integrated UI. | Colour inventory and asset references verified. |
 | 06 | P0 | Resolve PR #4 architecture: rebase or selectively port Vite state/tests + staticwebapp config into current root flat structure (or migrate). | Updated head green on CI; no conflicts; demo still persists locally; security headers present. |
+| 07 | P0 | Add typing indicator demo, draft persistence, and failed-message recovery states. | LocalStorage drafts survive reload; typing shown for AI contacts only. |
 
 
 ## Execution and evidence rules
@@ -33,4 +34,4 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 - Keep plans outside public deployment output. Check CI/deployment status separately; docs commits are not product release evidence.
 
 ## Sources
-Repository README, existing planning documents, open PR metadata, branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25, CI fix on 2026-11-26, and integration commits on 2026-11-27. PR #4 review comment added 2026-11-28. Demo react + retry + forward added 2026-11-28. No live infrastructure verification or deployment performed.
+Repository README, existing planning documents, open PR metadata, branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25, CI fix on 2026-11-26, and integration commits on 2026-11-27. PR #4 review comment added 2026-11-28. Demo react + retry + forward added 2026-11-28. Accessibility and interaction states advanced 2026-11-28. No live infrastructure verification or deployment performed.
