@@ -9,6 +9,7 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 - Branch `feat/reusable-ui-components` exists at SHA `d4cf8254f8bf4ff4702e5eb4b9cb4b30056b8751`.
 - `ui.js` helpers integrated into root on 2026-11-27: commits c811370 and d433691. `app.js` now imports showToast, preventDuplicate, openDialog, closeDialog. preventDuplicate wired on composer submit.
 - styles.css interaction states partially advanced: stronger focus-visible and .loading class added 2026-11-28 (commits 40712ec, 98296ce).
+- **2026-11-28 further polish (this session):** Added :active pressed states, selected/active row inset accent, improved loading overlay, explicit :disabled styles, higher-contrast focus outlines (#55d8ff solid). See styles.css commit 42c8ae8.
 - Related open PRs remain #4 (consolidated preview), #5 (docs audit), #6 (palette), #7 (naming).
 - CI secret-scan step quoting fixed; verify latest run after these commits.
 - **PR #4 review (2026-11-28):** non-draft but `mergeable_state=dirty`. August head validated green at the time; base has since diverged (current flat app.js + ui.js vs Vite src/ in PR). Useful carry-overs: state normalisation/escaping/tests, staticwebapp.config.json security headers + SPA fallback, explicit Node 24 CI verification. Comment posted with ordered next steps (rebase/port, lockfile, re-CI). Architecture decision still required before merge.
@@ -24,6 +25,7 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 | 04 | P1 | Design backend/session, contact privacy and encrypted-message threat model before real messaging. | Cross-user isolation and protocol review; no encryption claims until proven. |
 | 05 | P2 | Reconcile palette PR #6 and naming PR #7 with integrated UI. | Colour inventory and asset references verified. |
 | 06 | P0 | Resolve PR #4 architecture: rebase or selectively port Vite state/tests + staticwebapp config into current root flat structure (or migrate). | Updated head green on CI; no conflicts; demo still persists locally; security headers present. |
+| 07 | P0 | Further interaction-state polish done this session (pressed/selected/disabled/loading). Next: verify contrast ratios and complete full keyboard path test. | Visual check of :active, .active, :disabled; axe or manual contrast pass. |
 
 
 ## Execution and evidence rules
@@ -34,4 +36,4 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 - Keep plans outside public deployment output. Check CI/deployment status separately; docs commits are not product release evidence.
 
 ## Sources
-Repository README, existing planning documents, open PR metadata, branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25, CI fix on 2026-11-26, and integration commits on 2026-11-27. PR #4 review comment added 2026-11-28. Demo react + retry + forward added 2026-11-28. A11y focus/labels advances on root 2026-11-28. No live infrastructure verification or deployment performed.
+Repository README, existing planning documents, open PR metadata, branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25, CI fix on 2026-11-26, and integration commits on 2026-11-27. PR #4 review comment added 2026-11-28. Demo react + retry + forward added 2026-11-28. A11y focus/labels advances on root 2026-11-28. Interaction-state CSS polish on branch feat/interaction-states-and-a11y-polish-20261128. No live infrastructure verification or deployment performed.
