@@ -13,6 +13,7 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 - CI secret-scan step quoting fixed; verify latest run after these commits.
 - **PR #4 review (2026-11-28):** non-draft but `mergeable_state=dirty`. August head validated green at the time; base has since diverged (current flat app.js + ui.js vs Vite src/ in PR). Useful carry-overs: state normalisation/escaping/tests, staticwebapp.config.json security headers + SPA fallback, explicit Node 24 CI verification. Comment posted with ordered next steps (rebase/port, lockfile, re-CI). Architecture decision still required before merge.
 - **2026-11-28:** Demo react action added to message actions in app.js (commit a3f4d63). Toggles 👍 reaction locally. Retry and forward added in same session.
+- **2026-11-28 (this session):** Ported staticwebapp.config.json (SPA fallback + baseline security headers from PR #4 ideas) into current flat structure. Build script now copies it + ui.js into dist/.
 
 ## Ordered execution queue
 | ID | Priority | Next action | Acceptance evidence |
@@ -23,6 +24,7 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 | 04 | P1 | Design backend/session, contact privacy and encrypted-message threat model before real messaging. | Cross-user isolation and protocol review; no encryption claims until proven. |
 | 05 | P2 | Reconcile palette PR #6 and naming PR #7 with integrated UI. | Colour inventory and asset references verified. |
 | 06 | P0 | Resolve PR #4 architecture: rebase or selectively port Vite state/tests + staticwebapp config into current root flat structure (or migrate). | Updated head green on CI; no conflicts; demo still persists locally; security headers present. |
+| 07 | P0 | DONE (partial): Add staticwebapp.config.json and update build.mjs to include security headers + SPA fallback + ui.js. | File present; build copies it; headers match baseline from prior review. |
 
 
 ## Execution and evidence rules
@@ -33,4 +35,4 @@ README describes functional local demo. Open PRs #4–#7 observed. Existing ROAD
 - Keep plans outside public deployment output. Check CI/deployment status separately; docs commits are not product release evidence.
 
 ## Sources
-Repository README, existing planning documents, open PR metadata, branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25, CI fix on 2026-11-26, and integration commits on 2026-11-27. PR #4 review comment added 2026-11-28. Demo react + retry + forward added 2026-11-28. No live infrastructure verification or deployment performed.
+Repository README, existing planning documents, open PR metadata, branch inspection of `feat/reusable-ui-components@d4cf8254` performed 2026-11-25, CI fix on 2026-11-26, and integration commits on 2026-11-27. PR #4 review comment added 2026-11-28. Demo react + retry + forward added 2026-11-28. Security headers ported 2026-11-28. No live infrastructure verification or deployment performed.
